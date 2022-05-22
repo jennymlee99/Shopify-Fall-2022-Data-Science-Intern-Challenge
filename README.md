@@ -1,5 +1,5 @@
 # Shopify-Fall-2022-Data-Science-Intern-Challenge
-Jenny Li
+Jenny Li         
 Email: zl3071@columbia.edu
 
 ## Question1: Sneaker Shop AOV
