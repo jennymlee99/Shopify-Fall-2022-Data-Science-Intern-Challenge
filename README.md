@@ -12,7 +12,8 @@ A better way to evaluate this dataset is to divide the dataset and analyze them 
 **Metrics: Mean, Standard Deviation, and Median.**      
 * Firstly, the mean value is $3145, which is too high to represent the true industry.        
 * Then I noticed the Standard Deviation is 41282, almost 13 times of the mean value. It means the data is every skew and there are some outliers.       
-* After seperating the data into two datasets with IQR*100, I analyze two datasets seperately.    
+* After seperating the data into two datasets with IQR*100, I analyze two datasets seperately.  
+![](/output/q1.png)  
 #### (1) Small orders
 After deleting the "outliers", the AOV is **302** dollars and average item number of each order is **1.99**.         
 **Now it makes sense!** Most of time, customers buy 2 pairs of sneakers and pay 300 dollars for one order.
