@@ -24,3 +24,38 @@ Some are expensive purchase in the shop No.78, where one item costs 25725.
 #### Median overall
 To evaluate the data with outliers, I can also use median, which represents the average of the data as well.
 The median of this data is $284, also makes sense to represent the average purchase level.
+
+## Question2: SQL
+
+### a. How many orders were shipped by Speedy Express in total?
+SELECT COUNT(*)
+FROM [Orders]
+WHERE ShipperID = (
+	SELECT ShipperID
+	FROM [Shippers]
+	WHERE ShipperName = 'Speedy Express')
+![](/output/q2.1.png)
+
+### b. How many orders were shipped by Speedy Express in total?
+SELECT SUBSTR(CustomerName, 6, LENGTH(CustomerName)) AS LastName
+FROM [Customers]
+WHERE CustomerID = (
+	SELECT CustomerID
+    FROM [Orders]
+	GROUP BY CustomerID
+    ORDER BY COUNT(*) DESC
+    LIMIT(1))
+![](/output/q2.2.png)
+
+### c. What is the last name of the employee with the most orders?
+SELECT ProductID, COUNT(*) AS OrderNum
+FROM [Orders]
+JOIN [OrderDetails]
+WHERE CustomerID IN (
+	SELECT CustomerID
+    FROM [Customers]
+    WHERE Country = 'Germany')
+GROUP BY ProductID
+ORDER BY OrderNum
+LIMIT 1
+![](/output/q2.3.png)
